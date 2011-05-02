@@ -1,21 +1,22 @@
 TenEvents::Application.routes.draw do
-
-	# all these gets prob redundant, check after test with iPhone
-  #get "ed_month_events/index"
-  #get "ed_ten_events/show"
-  #get "ed_ten_events/edit"
-  #get "ed_ten_events/new"
+  
+   root :to => 'site#index'
+   
+   namespace :admin do
+     
+    resources :users
+    get "admin_pages/A_Summary"
+    
+   end
   
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   
   
-  match '/newAdmin',  :to => 'users#new'
+  #match '/newAdmin',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/sessions', :to => 'sessions#create'
-  
-  get "admin_pages/A_Summary"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,10 +64,6 @@ TenEvents::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-   root :to => 'admin_pages#A_Summary'
 
   # See how all your routes lay out with "rake routes"
 
