@@ -1,10 +1,6 @@
-class UsersController < ApplicationController
+class UsersController < AdminController
   
-  include SessionsHelper
-  
-  #THIS IS THE PUBLIC USERS CONTROLLER!!!
-  
-  before_filter :authenticate_public, :except => [:new, :create]
+  before_filter :authenticate_public, :except => ###
   
 def index
   
@@ -34,11 +30,8 @@ end
 	respond_to do |format|
      
      if @user.save
-       
-       sign_in @user
-       
-	   format.html { redirect_to root_path, :flash => { :success => "User created" }}
-	   format.xml  { render :xml => root_path, :status => :created, :location => @user }
+	   format.html { redirect_to users_path, :flash => { :success => "User created" }}
+	   format.xml  { render :xml => users_path, :status => :created, :location => @user }
 	   
      else
       @title = "Sign up"

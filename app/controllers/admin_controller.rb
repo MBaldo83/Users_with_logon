@@ -1,6 +1,13 @@
 class AdminController < ApplicationController
 
-before_filter :authenticate_public
+  protect_from_forgery
+  include SessionsHelper
+
+before_filter :authenticate_admin
+
+def authenticate_admin
+  deny_access unless signed_in? and admin_user?
+end
 
 def index
   

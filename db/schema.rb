@@ -15,10 +15,11 @@ ActiveRecord::Schema.define(:version => 20100919111523) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean  "admin"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

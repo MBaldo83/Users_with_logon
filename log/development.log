@@ -24636,3 +24636,416 @@ Rendered layouts/_header.html.erb (15.2ms)
 Rendered layouts/_footer.html.erb (0.2ms)
 Rendered site/index.html.erb within layouts/application (22.2ms)
 Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20100919111523)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (2.6ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20100919111523'[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "admin" boolean, "encrypted_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20100919111523')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 13:43:19 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 11ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:43:19 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (13.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered sessions/new.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:43:26 +0100 2011
+  Processing by SiteController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (12.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered site/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 25ms (Views: 24.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:44:10 +0100 2011
+  Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 10ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:44:10 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (12.0ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Mon May 09 13:44:17 +0100 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "session"=>{"name"=>"admin", "password"=>"[FILTERED]"}, "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'admin') LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (56.7ms)
+Rendered sessions/new.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 83ms (Views: 73.1ms | ActiveRecord: 0.3ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:45:46 +0100 2011
+  Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 14ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:45:46 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (12.8ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:46:06 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (74.0ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered sessions/new.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 88ms (Views: 87.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:46:11 +0100 2011
+  Processing by SiteController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (12.0ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered site/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 13:46:14 +0100 2011
+
+SyntaxError (/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/controllers/users_controller.rb:3: syntax error, unexpected kELSE):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 13:46:41 +0100 2011
+
+RuntimeError (ActionController::RackDelegation#status delegated to @_response.status, but @_response is nil: #<UsersController:0x1040735c8 @action_has_layout=true, @_status=200, @view_context_class=nil, @_headers={"Content-Type"=>"text/html"}>):
+  app/controllers/users_controller.rb:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 13:47:00 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 10ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:47:00 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (12.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (80.2ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:50:20 +0100 2011
+  Processing by SiteController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (28.0ms)
+Rendered site/index.html.erb within layouts/application (34.0ms)
+Completed   in 40ms
+
+ActionView::Template::Error (undefined local variable or method `new_user' for #<#<Class:0x104025dc8>:0x104024130>):
+    5:     <ul>
+    6:       <li><%= link_to "Summary", root_path %></li>
+    7: 	  <li><%= link_to "Users", users_path %></li>
+    8: 	  <li><%= link_to "Sign Up", new_user %></li>
+    9: 	  <% if signed_in? %>
+    10:       <li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+    11: 	  <% end %>
+  app/views/layouts/_header.html.erb:8:in `_app_views_layouts__header_html_erb___1260548986_2180977740_533470'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___501359801_2181106360_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (60.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (66.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:50:32 +0100 2011
+  Processing by SiteController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (12.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered site/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Mon May 09 13:50:34 +0100 2011
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages (0.5ms)
+Rendered users/_form.html.erb (8.7ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (4.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/new.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 105ms (Views: 40.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Mon May 09 13:51:56 +0100 2011
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages (0.4ms)
+Rendered users/_form.html.erb (8.3ms)
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (4.5ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at Mon May 09 13:52:28 +0100 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "user"=>{"name"=>"Mike", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 10ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:52:28 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (12.9ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 27ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Mon May 09 13:53:39 +0100 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "session"=>{"name"=>"mike", "password"=>"[FILTERED]"}, "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'mike') LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (2.4ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 26ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Mon May 09 13:53:45 +0100 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "session"=>{"name"=>"Mike", "password"=>"[FILTERED]"}, "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'Mike') LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (2.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/users/new" for 127.0.0.1 at Mon May 09 13:55:16 +0100 2011
+  Processing by UsersController#new as HTML
+Rendered shared/_error_messages (60.4ms)
+Rendered users/_form.html.erb (68.4ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Rendered layouts/_header.html.erb (4.4ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/new.html.erb within layouts/application (82.3ms)
+Completed 200 OK in 95ms (Views: 88.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at Mon May 09 13:55:33 +0100 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "encrypted_password", "name", "salt", "updated_at") VALUES (NULL, '2011-05-09 12:55:33.263615', 'mike@what.com', '0248e0399b82458dd5c9d9d4f0ea7883c9a171dbb408dc58eba0a9d0b77f7fd1', 'mike', '76902c80333446c85ddbd78541b985c11098b7a5f7e53ba2f578922004089480', '2011-05-09 12:55:33.263615')
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 18ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 13:55:33 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 10ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 13:55:33 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered layouts/_header.html.erb (72.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered sessions/new.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 88ms (Views: 87.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at Mon May 09 13:56:11 +0100 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "session"=>{"name"=>"mike", "password"=>"[FILTERED]"}, "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'mike') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 14ms
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 13:56:11 +0100 2011
+  Processing by SiteController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (72.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered site/index.html.erb within layouts/application (79.9ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:00:24 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (1.7ms)
+Rendered layouts/_stylesheets.html.erb (0.9ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 31ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:02:27 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 93ms (Views: 16.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:03:11 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (1.4ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 30ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Mon May 09 14:03:13 +0100 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 36ms (Views: 22.5ms | ActiveRecord: 0.2ms)
