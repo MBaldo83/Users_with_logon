@@ -1,10 +1,10 @@
 class Admin::UsersController < AdminController
   
-  #before_filter :authenticate_admin
-  before_filter :authenticate_public
+  before_filter :authenticate_admin
+  #before_filter :authenticate_public
   
 def index
-  
+  logger.debug"definitely in the admin controller for users...."
   @users = User.all
   
 end
@@ -12,6 +12,8 @@ end
   def new
 	@user = User.new
 	@title = "Create New User"
+	
+	logger.debug"definitely in the admin controller for new users...."
 	
 	respond_to do |format|
       format.html { render 'new' }
@@ -26,20 +28,9 @@ end
   end
   
   def create
-    @user = User.new(params[:user])
-	
-	respond_to do |format|
-     
-     if @user.save
-	   format.html { redirect_to users_path, :flash => { :success => "User created" }}
-	   format.xml  { render :xml => users_path, :status => :created, :location => @user }
-	   
-     else
-      @title = "Sign up"
-	  format.html { render 'new' }
-	  format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-     end
-	end
+ 
+ #This is in the public users controller
+ 
   end
   
   def edit
@@ -50,24 +41,18 @@ end
   end
   
   def update
-    @user = User.find(params[:id])
-	
-    if @user.update_attributes(params[:user])
-	
-      flash[:success] = "User updated."
-      redirect_to users_path
-    else
-      @title = @user.name
-      render 'edit'
-    end
+
+    #This is in the public users controller
 	
   end
 
 def destroy
   
+  logger.debug"definitely in the admin controller for destroy users...."
+  
   User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
-    redirect_to users_path
+    redirect_to admin_users_path
   
   
 end

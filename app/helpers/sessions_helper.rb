@@ -24,11 +24,15 @@ module SessionsHelper
   def sign_out
     cookies.delete(:remember_token)
     self.current_user = nil
-	redirect_to signin_path, :notice => "You've sucessfully signed out"
+	redirect_to root_path, :notice => "You've sucessfully signed out"
   end
   
   def deny_access
     redirect_to signin_path, :notice => "Please sign in to access this page."
+  end
+  
+  def deny_access_not_admin
+    redirect_to root_path, :notice => "You don't have the privileges to access this page."
   end
   
   private

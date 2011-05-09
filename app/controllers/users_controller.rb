@@ -25,27 +25,37 @@ end
   
   def show
     @user = User.find(params[:id])
-	@title = @user.name
+	  @title = @user.name
   end
   
   def create
     @user = User.new(params[:user])
+    
+    logger.debug "in create from public users"
 	
 	respond_to do |format|
      
      if @user.save
        
-       sign_in @user
+       unless signed_in?
+        sign_in @user
+       end
        
-	   format.html { redirect_to root_path, :flash => { :success => "User created" }}
-	   format.xml  { render :xml => root_path, :status => :created, :location => @user }
-	   
+       if admin_user?
+         logger.debug"just saved, trying to redirect"
+   	     format.html { redirect_to admin_users_path, :flash => { :success => "User created" }}
+   	     format.xml  { render :xml => admin_users_path, :status => :created, :location => @user }
+       else
+	       format.html { redirect_to root_path, :flash => { :success => "Thanks for signing up!" }}
+	       format.xml  { render :xml => root_path, :status => :created, :location => @user }
+       end
+	    
      else
       @title = "Sign up"
-	  format.html { render 'new' }
-	  format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+	    format.html { render 'new' }
+	    format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
      end
-	end
+	 end
   end
   
   def edit
@@ -60,21 +70,32 @@ end
 	
     if @user.update_attributes(params[:user])
 	
-      flash[:success] = "User updated."
-      redirect_to users_path
+	    if admin_user?
+        flash[:success] = "User updated."
+        redirect_to admin_users_path
+      else
+        flash[:success] = "User updated."
+        redirect_to users_path
+      end
     else
       @title = @user.name
       render 'edit'
     end
-	
   end
 
 def destroy
   
-  User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
-    redirect_to users_path
+  logger.debug "in destroy from public users"
   
+  User.find(params[:id]).destroy
+    
+    if admin_user?
+      flash[:success] = "User destroyed."
+      redirect_to admin_users_path
+    else
+      flash[:success] = "User destroyed."
+      redirect_to users_path
+    end
   
 end
 

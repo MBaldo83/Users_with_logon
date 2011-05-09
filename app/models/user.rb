@@ -35,9 +35,15 @@ class User < ActiveRecord::Base
 	
 	def set_admin
 	  
-	  if self.admin_public_bool
-	    self.admin = true
-    end
+	  logger.debug(self.admin_public_bool.to_s)
+	  
+	 if self.admin_public_bool == 1
+	   self.admin = true
+	   logger.debug"bool == 1"
+   else
+     self.admin = nil
+     logger.debug"bool == 0"
+   end
   end
 	
 		def encrypt_password

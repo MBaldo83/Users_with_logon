@@ -35,9 +35,14 @@ def create
    else
 	
 	sign_in user
-	
+	if admin_user?
+	  format.html { redirect_to admin_path}
+  	format.xml  { render :xml => @user, :status => :created, :location => @user }
+  else
 	format.html { redirect_to root_path}
 	format.xml  { render :xml => @user, :status => :created, :location => @user }
+    
+    end
    end
   end
 end
