@@ -1,6 +1,7 @@
-class UsersController < AdminController
+class Admin::UsersController < AdminController
   
-  before_filter :authenticate_public, :except => ###
+  #before_filter :authenticate_admin
+  before_filter :authenticate_public
   
 def index
   

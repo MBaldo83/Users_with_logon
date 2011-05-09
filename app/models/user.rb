@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	
-	attr_accessor :password
-	attr_accessible :name, :email, :password, :password_confirmation
+	attr_accessor :password, :admin_public_bool
+	attr_accessible :name, :email, :password, :password_confirmation, :admin_public_bool
 	
 	validates :name,	:presence => true,
 						:uniqueness => true
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 							:confirmation => true,
 							:length => { :within => 6..40 }
 							
-	before_save :encrypt_password
+	before_save :encrypt_password, :set_admin
 	
 	def has_password?(submitted_password)
 	  encrypted_password == encrypt(submitted_password)
@@ -32,6 +32,13 @@ class User < ActiveRecord::Base
 
 	
 	private
+	
+	def set_admin
+	  
+	  if self.admin_public_bool
+	    self.admin = true
+    end
+  end
 	
 		def encrypt_password
 		  self.salt = make_salt if new_record?

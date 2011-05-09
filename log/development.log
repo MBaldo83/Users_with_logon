@@ -25049,3 +25049,1148 @@ Rendered layouts/_header.html.erb (1.7ms)
 Rendered layouts/_footer.html.erb (0.2ms)
 Rendered users/show.html.erb within layouts/application (9.1ms)
 Completed 200 OK in 36ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 14:18:12 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 28ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/Users" for 127.0.0.1 at Mon May 09 14:18:27 +0100 2011
+
+ActionController::RoutingError (No route matches "/admin/Users"):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:18:33 +0100 2011
+
+LoadError (Expected /Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/controllers/admin/users_controller.rb to define Admin::UsersController):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:19:59 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.7ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 33ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:21:39 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+ERROR: compiling _app_views_admin_users__table_html_erb__587684962_2181270360_781470 RAISED compile error
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:12: syntax error, unexpected kELSE, expecting kTHEN or ':' or '\n' or ';'
+...er.admin "<td> yes </td>" else "<td> no </td>" );@output_buf...
+                              ^
+Function body:           def _app_views_admin_users__table_html_erb__587684962_2181270360_781470(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin/users/_table";_old_output_buffer = @output_buffer;table = local_assigns[:table];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- admin users table -->
+<table>
+  <tr>
+    <th>Name </th>
+    <th>Email </th>
+    <th>Admin </th>
+  </tr>
+');@output_buffer.append_if_string=  @users.each do |user| 
+@output_buffer.safe_concat('    
+	<td>');@output_buffer.append= ( user.name);@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( user.email );@output_buffer.safe_concat('</td>
+	');@output_buffer.append= ( if user.admin "<td> yes </td>" else "<td> no </td>" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	<td>');@output_buffer.append= ( link_to 'Show', user );@output_buffer.safe_concat('</td>
+	<td>');@output_buffer.append= ( link_to "Edit", polymorphic_path(user, :action => :edit) );@output_buffer.safe_concat('</td>
+   	<td>');@output_buffer.append= ( link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+									 :title => "Delete User" );@output_buffer.safe_concat('</td>
+  </tr>
+'); end 
+@output_buffer.safe_concat('</table>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:22:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:294:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:223:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:221:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:334:in `_render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:31:in `render'
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2181301100_0'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__248458308__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin/users/_table.html.erb (0.7ms)
+Rendered admin/users/index.html.erb within layouts/application (2.7ms)
+Completed   in 23ms
+
+ActionView::Template::Error (compile error
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:12: syntax error, unexpected kELSE, expecting kTHEN or ':' or '\n' or ';'
+...er.admin "<td> yes </td>" else "<td> no </td>" );@output_buf...
+                              ^):
+    9:     
+    10: 	<td><%= user.name%></td>
+    11:     <td><%= user.email %></td>
+    12: 	<%= if user.admin "<td> yes </td>" else "<td> no </td>" %>
+    13: 	<td><%= link_to 'Show', user %></td>
+    14: 	<td><%= link_to "Edit", polymorphic_path(user, :action => :edit) %></td>
+    15:    	<td><%= link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+  app/views/admin/users/_table.html.erb:22:in `compile'
+  app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2181301100_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:21:57 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+ERROR: compiling _app_views_admin_users__table_html_erb__587684962_2179552620_781470 RAISED compile error
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:12: syntax error, unexpected kELSE, expecting kTHEN or ':' or '\n' or ';'
+...er.admin "<td> yes </td>" else "<td> no </td>" end);@output_...
+                              ^
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:12: syntax error, unexpected kEND, expecting ')'
+.../td>" else "<td> no </td>" end);@output_buffer.safe_concat('
+                              ^
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:18: syntax error, unexpected kEND, expecting ')'
+'); end 
+       ^
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:20: syntax error, unexpected kENSURE, expecting ')'
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:22: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_admin_users__table_html_erb__587684962_2179552620_781470(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "admin/users/_table";_old_output_buffer = @output_buffer;table = local_assigns[:table];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!-- admin users table -->
+<table>
+  <tr>
+    <th>Name </th>
+    <th>Email </th>
+    <th>Admin </th>
+  </tr>
+');@output_buffer.append_if_string=  @users.each do |user| 
+@output_buffer.safe_concat('    
+	<td>');@output_buffer.append= ( user.name);@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( user.email );@output_buffer.safe_concat('</td>
+	');@output_buffer.append= ( if user.admin "<td> yes </td>" else "<td> no </td>" end);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	<td>');@output_buffer.append= ( link_to 'Show', user );@output_buffer.safe_concat('</td>
+	<td>');@output_buffer.append= ( link_to "Edit", polymorphic_path(user, :action => :edit) );@output_buffer.safe_concat('</td>
+   	<td>');@output_buffer.append= ( link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+									 :title => "Delete User" );@output_buffer.safe_concat('</td>
+  </tr>
+'); end 
+@output_buffer.safe_concat('</table>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:22:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:294:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:223:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:221:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/partials.rb:334:in `_render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:31:in `render'
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2179564140_0'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:135:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:92:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:150:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:440:in `_run__248458308__process_action__199225275__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/base.rb:119:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/abstract_controller/rendering.rb:40:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:133:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_controller/metal.rb:173:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.0/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered admin/users/_table.html.erb (0.7ms)
+Rendered admin/users/index.html.erb within layouts/application (2.7ms)
+Completed   in 22ms
+
+ActionView::Template::Error (compile error
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:12: syntax error, unexpected kELSE, expecting kTHEN or ':' or '\n' or ';'
+...er.admin "<td> yes </td>" else "<td> no </td>" end);@output_...
+                              ^
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:12: syntax error, unexpected kEND, expecting ')'
+.../td>" else "<td> no </td>" end);@output_buffer.safe_concat('
+                              ^
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:18: syntax error, unexpected kEND, expecting ')'
+'); end 
+       ^
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:20: syntax error, unexpected kENSURE, expecting ')'
+/Users/michaelbaldock/Documents/Software/Ruby_On_Rails/Users_with_logon/app/views/admin/users/_table.html.erb:22: syntax error, unexpected kEND, expecting ')'):
+    9:     
+    10: 	<td><%= user.name%></td>
+    11:     <td><%= user.email %></td>
+    12: 	<%= if user.admin "<td> yes </td>" else "<td> no </td>" end%>
+    13: 	<td><%= link_to 'Show', user %></td>
+    14: 	<td><%= link_to "Edit", polymorphic_path(user, :action => :edit) %></td>
+    15:    	<td><%= link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+  app/views/admin/users/_table.html.erb:22:in `compile'
+  app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2179564140_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.3ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:23:18 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.8ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 32ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:23:36 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 33ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:23:48 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.8ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (61.0ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered admin/users/index.html.erb within layouts/application (72.2ms)
+Completed 200 OK in 92ms (Views: 78.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at Mon May 09 14:24:10 +0100 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered shared/_error_messages (0.4ms)
+Rendered users/_form.html.erb (5.3ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/edit.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 38ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:24:44 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (9.7ms)
+Rendered admin/users/index.html.erb within layouts/application (11.8ms)
+Completed   in 91ms
+
+ActionView::Template::Error (undefined local variable or method `edit_admin_user' for #<#<Class:0x103e6e340>:0x1040f58c0>):
+    13: 		<% else %> <td> no </td>
+    14: 	<% end %>
+    15: 	<td><%= link_to 'Show', user %></td>
+    16: 	<td><%= link_to "Edit", polymorphic_path(edit_admin_user, :action => :edit) %></td>
+    17:    	<td><%= link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+    18: 									 :title => "Delete User" %></td>
+    19:   </tr>
+  app/views/admin/users/_table.html.erb:16:in `_app_views_admin_users__table_html_erb__587684962_2183630220_781470'
+  app/views/admin/users/_table.html.erb:8:in `each'
+  app/views/admin/users/_table.html.erb:8:in `_app_views_admin_users__table_html_erb__587684962_2183630220_781470'
+  app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2183196080_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:24:52 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.4ms)
+Rendered admin/users/index.html.erb within layouts/application (3.4ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"admin/users"}):
+    13: 		<% else %> <td> no </td>
+    14: 	<% end %>
+    15: 	<td><%= link_to 'Show', user %></td>
+    16: 	<td><%= link_to "Edit", polymorphic_path(edit_admin_user_path, :action => :edit) %></td>
+    17:    	<td><%= link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+    18: 									 :title => "Delete User" %></td>
+    19:   </tr>
+  app/views/admin/users/_table.html.erb:16:in `_app_views_admin_users__table_html_erb__587684962_2180242320_781470'
+  app/views/admin/users/_table.html.erb:8:in `each'
+  app/views/admin/users/_table.html.erb:8:in `_app_views_admin_users__table_html_erb__587684962_2180242320_781470'
+  app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2180268480_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:25:42 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.7ms)
+Rendered admin/users/index.html.erb within layouts/application (3.7ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"admin/users"}):
+    13: 		<% else %> <td> no </td>
+    14: 	<% end %>
+    15: 	<td><%= link_to 'Show', user %></td>
+    16: 	<td><%= link_to "Edit", edit_admin_user_path %></td>
+    17:    	<td><%= link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+    18: 									 :title => "Delete User" %></td>
+    19:   </tr>
+  app/views/admin/users/_table.html.erb:16:in `_app_views_admin_users__table_html_erb__587684962_2182633080_781470'
+  app/views/admin/users/_table.html.erb:8:in `each'
+  app/views/admin/users/_table.html.erb:8:in `_app_views_admin_users__table_html_erb__587684962_2182633080_781470'
+  app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2182685800_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:25:49 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.4ms)
+Rendered admin/users/index.html.erb within layouts/application (3.3ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"admin/users"}):
+    13: 		<% else %> <td> no </td>
+    14: 	<% end %>
+    15: 	<td><%= link_to 'Show', user %></td>
+    16: 	<td><%= link_to "Edit", edit_admin_user_path %></td>
+    17:    	<td><%= link_to "Delete", user, :method => :delete, :confirm => 'Are you sure?',  
+    18: 									 :title => "Delete User" %></td>
+    19:   </tr>
+  app/views/admin/users/_table.html.erb:16:in `_app_views_admin_users__table_html_erb__587684962_2179880500_781470'
+  app/views/admin/users/_table.html.erb:8:in `each'
+  app/views/admin/users/_table.html.erb:8:in `_app_views_admin_users__table_html_erb__587684962_2179880500_781470'
+  app/views/admin/users/index.html.erb:7:in `_app_views_admin_users_index_html_erb__93849054_2179892040_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:29:15 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.7ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 33ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Mon May 09 14:29:20 +0100 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 31ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:29:26 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (5.7ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 37ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:29:30 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1[0m
+Rendered shared/_error_messages (1.9ms)
+Rendered users/_form.html.erb (6.3ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/edit.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 43ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:29:50 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 80ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:29:50 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 33ms (Views: 18.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 14:33:47 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Completed   in 14ms
+
+NoMethodError (undefined method `admin_user?' for #<AdminController:0x103e8e618>):
+  app/controllers/admin_controller.rb:9:in `authenticate_admin'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 14:34:29 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 14ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 14:34:29 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (16.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:34:39 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 33ms (Views: 17.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon May 09 14:34:45 +0100 2011
+  Processing by SiteController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (16.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered site/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 29ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:34:47 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered users/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 91ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 14:35:27 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 13ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 14:35:27 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (17.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered sessions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:35:37 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 96ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 14:38:28 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+denying access for admin authenticate no
+Redirected to http://0.0.0.0:3000/signin
+Completed 302 Found in 14ms
+
+
+Started GET "/signin" for 127.0.0.1 at Mon May 09 14:38:28 +0100 2011
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (16.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered sessions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Mon May 09 14:39:06 +0100 2011
+  Processing by AdminController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+signed in, and admin user yeah
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 27ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:41:01 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered admin/users/_table.html.erb (2.0ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 33ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:41:05 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.5ms)
+Rendered admin/users/_form.html.erb (6.2ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 98ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:41:14 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 19ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:41:14 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 34ms (Views: 18.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:41:22 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered admin/users/_table.html.erb (1.8ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 33ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:45:44 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (5.5ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 36ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:45:51 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin_public_bool
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+Completed   in 79ms
+
+NameError (undefined local variable or method `set_admin' for #<User:0x1044c9cd0>):
+  app/controllers/admin/users_controller.rb:54:in `update'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:46:13 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin_public_bool
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 19ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:46:13 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 36ms (Views: 20.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:46:20 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered admin/users/_table.html.erb (1.8ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 33ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:46:42 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (6.1ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 37ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:46:50 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin_public_bool
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 79ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:46:50 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 33ms (Views: 17.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:46:56 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered admin/users/_table.html.erb (1.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 93ms (Views: 79.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:47:07 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (5.6ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 37ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:47:13 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin_public_bool
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 18ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:47:13 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (66.0ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered users/index.html.erb within layouts/application (76.2ms)
+Completed 200 OK in 97ms (Views: 82.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:47:19 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered admin/users/_table.html.erb (1.7ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 33ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:48:30 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (5.8ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 98ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:48:38 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin_public_bool
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+Rendered shared/_error_messages (1.2ms)
+Rendered users/_form.html.erb (5.9ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/edit.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 88ms (Views: 59.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:48:54 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+WARNING: Can't mass-assign protected attributes: admin_public_bool
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 18ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:48:54 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/_table.html.erb (1.0ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 96ms (Views: 17.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:50:15 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (4.9ms)
+Rendered admin/users/edit.html.erb within layouts/application (6.6ms)
+Completed   in 26ms
+
+ActionView::Template::Error (undefined method `admin_public_bool' for #<User:0x103f10fa0>):
+    11: 
+    12:  <div class="field">
+    13:     <%= f.label "Admin user?" %><br />
+    14:     <%= f.check_box :admin_public_bool %>
+    15:   </div>
+    16: 
+    17:   <div class="field">
+  app/views/admin/users/_form.html.erb:14:in `_app_views_admin_users__form_html_erb__1373424466_2180518700_876670'
+  app/views/admin/users/_form.html.erb:3:in `_app_views_admin_users__form_html_erb__1373424466_2180518700_876670'
+  app/views/admin/users/edit.html.erb:3:in `_app_views_admin_users_edit_html_erb___2137167_2180532340_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at Mon May 09 14:51:59 +0100 2011
+  Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered shared/_error_messages (0.4ms)
+Rendered admin/users/_form.html.erb (5.8ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/edit.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 36ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at Mon May 09 14:52:06 +0100 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"9f7BnlTqo9Vg7CxAaPImbtlPrS27dkGPMv/vA7McGLE=", "utf8"=>"✓", "id"=>"1", "user"=>{"name"=>"mike", "password_confirmation"=>"[FILTERED]", "admin_public_bool"=>"1", "password"=>"[FILTERED]", "email"=>"mike@what.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."name" = 'mike') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mike@what.com') AND ("users".id <> 1) LIMIT 1
+1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "admin" = 't', "updated_at" = '2011-05-09 13:52:06.435696' WHERE ("users"."id" = 1)[0m
+Redirected to http://0.0.0.0:3000/users
+Completed 302 Found in 21ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon May 09 14:52:06 +0100 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/_table.html.erb (0.9ms)
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 95ms (Views: 17.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at Mon May 09 14:52:14 +0100 2011
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered admin/users/_table.html.erb (1.7ms)
+Rendered layouts/_stylesheets.html.erb (1.0ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered admin/users/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 32ms (Views: 18.4ms | ActiveRecord: 0.5ms)
